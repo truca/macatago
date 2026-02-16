@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* ============================================
+   MACATA GO — Theme System (3 themes)
+   ============================================ */
+
+/* --- Theme: Solar (default — brillante y confiable) --- */
+:root,
+[data-theme="solar"] {
+  --color-bg: #ffffff;
+  --color-bg-alt: #fef9f3;
+  --color-bg-card: #ffffff;
+  --color-fg: #1c1410;
+  --color-fg-muted: #6b5c52;
+  --color-fg-subtle: #9a8b80;
+  --color-primary: #f6890b;
+  --color-primary-hover: #e07a00;
+  --color-primary-fg: #ffffff;
+  --color-secondary: #ef9f43;
+  --color-accent: #b74e13;
+  --color-earth: #b97752;
+  --color-cream: #ecd2b6;
+  --color-light: #f5eee3;
+  --color-border: #e8ddd2;
+  --color-border-subtle: #f0e8de;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1eba59;
+  --shadow-card: 0 1px 3px rgba(28, 20, 16, 0.06), 0 1px 2px rgba(28, 20, 16, 0.04);
+  --shadow-card-hover: 0 4px 12px rgba(28, 20, 16, 0.08), 0 2px 4px rgba(28, 20, 16, 0.04);
+  --shadow-float: 0 8px 24px rgba(28, 20, 16, 0.12);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+/* --- Theme: Tierra (editorial en tonos tierra) --- */
+[data-theme="tierra"] {
+  --color-bg: #f5eee3;
+  --color-bg-alt: #efe5d6;
+  --color-bg-card: #faf6f0;
+  --color-fg: #2c1e12;
+  --color-fg-muted: #5c4a3a;
+  --color-fg-subtle: #8a7868;
+  --color-primary: #b74e13;
+  --color-primary-hover: #a04210;
+  --color-primary-fg: #ffffff;
+  --color-secondary: #b97752;
+  --color-accent: #f6890b;
+  --color-earth: #8b5e3c;
+  --color-cream: #ecd2b6;
+  --color-light: #f5eee3;
+  --color-border: #d4c4b0;
+  --color-border-subtle: #e2d6c8;
+  --shadow-card: 0 1px 3px rgba(44, 30, 18, 0.08), 0 1px 2px rgba(44, 30, 18, 0.05);
+  --shadow-card-hover: 0 4px 12px rgba(44, 30, 18, 0.1), 0 2px 4px rgba(44, 30, 18, 0.05);
+  --shadow-float: 0 8px 24px rgba(44, 30, 18, 0.14);
+}
+
+/* --- Theme: Nocturno (premium oscuro) --- */
+[data-theme="nocturno"] {
+  --color-bg: #1a1210;
+  --color-bg-alt: #231a16;
+  --color-bg-card: #2a1f1a;
+  --color-fg: #f0e8de;
+  --color-fg-muted: #b8a898;
+  --color-fg-subtle: #8a7b6e;
+  --color-primary: #f6890b;
+  --color-primary-hover: #ffa033;
+  --color-primary-fg: #1a1210;
+  --color-secondary: #ef9f43;
+  --color-accent: #e8a060;
+  --color-earth: #c8956e;
+  --color-cream: #3d2e24;
+  --color-light: #2a1f1a;
+  --color-border: #3d2e24;
+  --color-border-subtle: #322520;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   Tailwind v4 Theme Tokens
+   ============================================ */
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-bg-alt: var(--color-bg-alt);
+  --color-bg-card: var(--color-bg-card);
+  --color-fg: var(--color-fg);
+  --color-fg-muted: var(--color-fg-muted);
+  --color-fg-subtle: var(--color-fg-subtle);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-fg: var(--color-primary-fg);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-earth: var(--color-earth);
+  --color-cream: var(--color-cream);
+  --color-light: var(--color-light);
+  --color-border: var(--color-border);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-whatsapp: var(--color-whatsapp);
+  --color-whatsapp-hover: var(--color-whatsapp-hover);
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transitions for themed elements */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Exclude specific elements from blanket transition */
+a, button, input, textarea, select,
+[class*="animate-"], [class*="transition-"] {
+  transition: all 0.2s ease;
+}
+
+/* Focus visible for a11y */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Skip link for a11y */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-primary-fg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
