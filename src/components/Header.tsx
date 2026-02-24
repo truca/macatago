@@ -31,9 +31,14 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Acciones */}
-        <div className="flex items-center gap-2 sm:gap-3">
-
+        {/* Navegación + Acciones */}
+        <div className="flex items-center gap-4 sm:gap-5">
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-fg-muted hover:text-primary"
+          >
+            Blog
+          </Link>
           <a
             href={WHATSAPP_URL}
             target="_blank"
