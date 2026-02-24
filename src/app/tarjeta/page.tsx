@@ -1,7 +1,7 @@
 "use client";
 
-import { WHATSAPP_URL, WHATSAPP_E164, CONTACT_EMAIL, SITE_URL, PERSONA } from "@/lib/config";
-import { IconWhatsApp, IconDownload, IconCopy, IconShare, IconUser } from "@/components/Icons";
+import { WHATSAPP_E164, CONTACT_EMAIL, SITE_URL, PERSONA } from "@/lib/config";
+import { IconCalendar, IconDownload, IconCopy, IconShare, IconUser } from "@/components/Icons";
 import { useState } from "react";
 import type { Metadata } from "next";
 
@@ -91,13 +91,11 @@ export default function TarjetaPage() {
 
             {/* Main CTA */}
             <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-full bg-whatsapp py-3.5 text-base font-bold text-white hover:bg-whatsapp-hover"
+              href="/agendar"
+              className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-full bg-primary py-3.5 text-base font-bold text-primary-fg hover:bg-primary-hover"
             >
-              <IconWhatsApp className="h-5 w-5" />
-              Escribir por WhatsApp
+              <IconCalendar className="h-5 w-5" />
+              Agendar una reunión
             </a>
 
             {/* Secondary actions */}

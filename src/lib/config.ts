@@ -13,6 +13,12 @@ export const WHATSAPP_MESSAGE = "Hola Nati, vengo por recomendación y me gustar
 /** URL completa de WhatsApp */
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_E164.replace("+", "")}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
+/** URL de Calendly para agendar reuniones */
+export const CALENDLY_URL = "https://calendly.com/nexahrchile/30min";
+
+/** URL del formulario Tally para detalles del viaje */
+export const TALLY_FORM_URL = "https://tally.so/r/vGyeav";
+
 /** Email de contacto */
 export const CONTACT_EMAIL = "hola@macatago.com"; // TODO: reemplaza con el email real
 

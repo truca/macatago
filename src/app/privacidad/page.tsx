@@ -68,12 +68,17 @@ export default function PrivacidadPage() {
             </p>
           </Section>
 
-          <Section title="5. Cookies y analíticas">
+          <Section title="5. Cookies, formularios y analíticas">
             <p>
-              Este sitio web es estático y no utiliza cookies de seguimiento
-              ni herramientas de analítica que recopilen datos personales. No
-              usamos formularios ni almacenamos información en el navegador
-              más allá de tu preferencia de tema visual (localStorage).
+              Este sitio web no utiliza cookies de seguimiento ni herramientas
+              de analítica que recopilen datos personales. Solo almacenamos tu
+              preferencia de tema visual en localStorage.
+            </p>
+            <p>
+              Para agendar reuniones y recopilar información sobre tu viaje,
+              utilizamos servicios externos (Calendly y Tally). Estos
+              servicios tienen sus propias políticas de privacidad y manejan
+              tus datos de forma independiente.
             </p>
           </Section>
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { WHATSAPP_URL, PERSONA } from "@/lib/config";
+import Link from "next/link";
+import { PERSONA } from "@/lib/config";
 import {
-  IconWhatsApp,
   IconChat,
   IconCalendar,
   IconMap,
@@ -53,15 +53,13 @@ function HeroSection() {
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row md:justify-start">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/agendar"
               className="inline-flex items-center gap-2.5 rounded-full bg-primary px-8 py-3.5 text-base font-bold text-primary-fg shadow-lg hover:bg-primary-hover hover:scale-[1.02] active:scale-[0.98]"
             >
-              <IconWhatsApp className="h-5 w-5" />
-              Diagnóstico gratis por WhatsApp
-            </a>
+              <IconCalendar className="h-5 w-5" />
+              Agendar consulta gratis
+            </Link>
             <a
               href="#como-funciona"
               className="inline-flex items-center gap-1.5 rounded-full border border-border px-6 py-3.5 text-base font-medium text-fg-muted hover:border-primary hover:text-fg"
@@ -72,7 +70,7 @@ function HeroSection() {
           </div>
 
           <p className="mt-6 text-sm text-fg-subtle">
-            Sin compromiso. Respondo en menos de 24 hrs.
+            Sin costo ni compromiso. Elige el horario que más te acomode.
           </p>
         </div>
 
@@ -197,15 +195,13 @@ function QueCotizarSection() {
               </li>
             ))}
           </ul>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/agendar"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-fg hover:bg-primary-hover"
           >
-            <IconWhatsApp className="h-4 w-4" />
-            Pedir diagnóstico gratis
-          </a>
+            <IconCalendar className="h-4 w-4" />
+            Agendar consulta gratis
+          </Link>
         </div>
       </div>
     </section>
@@ -281,20 +277,18 @@ function CTAFinalSection() {
           ¿Lista/o para tu próximo viaje?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-fg-muted">
-          Escríbeme por WhatsApp y conversemos. El diagnóstico es sin costo
-          ni compromiso.
+          Agenda una consulta gratuita y cuéntame sobre tu viaje. Llego a
+          nuestra primera reunión con un boceto listo para ti.
         </p>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/agendar"
           className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-fg shadow-lg hover:bg-primary-hover hover:scale-[1.02] active:scale-[0.98]"
         >
-          <IconWhatsApp className="h-6 w-6" />
-          Diagnóstico gratis por WhatsApp
-        </a>
+          <IconCalendar className="h-6 w-6" />
+          Agendar consulta gratis
+        </Link>
         <p className="mt-4 text-sm text-fg-subtle">
-          Respondo en menos de 24 horas.
+          Solo toma 2 minutos. Sin costo ni compromiso.
         </p>
       </div>
     </section>
