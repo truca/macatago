@@ -4,6 +4,9 @@
    EDITA AQUÍ tus datos reales antes de deploy.
 */
 
+/** Base path del sitio (coincide con next.config.ts) */
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 /** Número WhatsApp en formato E.164 (sin espacios ni guiones) */
 export const WHATSAPP_E164 = "+56912345678"; // TODO: reemplaza con el número real de Nati
 
