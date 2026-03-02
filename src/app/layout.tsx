@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThemeScript } from "@/components/ThemeScript";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -90,6 +91,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFloat />
       </body>
+      <GoogleAnalytics gaId="G-M0V3EQBS1N" />
     </html>
   );
 }

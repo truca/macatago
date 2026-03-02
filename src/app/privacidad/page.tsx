@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CONTACT_EMAIL, PERSONA, SITE_URL } from "@/lib/config";
+import { CONTACT_EMAIL, PERSONA } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad",
@@ -18,7 +18,7 @@ export default function PrivacidadPage() {
           Política de Privacidad
         </h1>
         <p className="mt-2 text-sm text-fg-subtle">
-          Última actualización: febrero 2026
+          Última actualización: marzo 2026
         </p>
 
         <div className="prose-custom mt-10 space-y-8 text-fg-muted">
@@ -70,9 +70,23 @@ export default function PrivacidadPage() {
 
           <Section title="5. Cookies, formularios y analíticas">
             <p>
-              Este sitio web no utiliza cookies de seguimiento ni herramientas
-              de analítica que recopilen datos personales. Solo almacenamos tu
-              preferencia de tema visual en localStorage.
+              Este sitio utiliza <strong>Google Analytics</strong> para
+              entender cómo los visitantes interactúan con la página (páginas
+              visitadas, duración de la visita, país de origen). Google
+              Analytics utiliza cookies y envía datos a servidores de Google.
+              No recopilamos datos que te identifiquen personalmente a través
+              de esta herramienta. Puedes desactivar las cookies de Google
+              Analytics instalando el{" "}
+              <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                complemento de inhabilitación de Google Analytics
+              </a>
+              . También almacenamos tu preferencia de tema visual en
+              localStorage.
             </p>
             <p>
               Para agendar reuniones y recopilar información sobre tu viaje,
