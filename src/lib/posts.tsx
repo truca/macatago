@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { WHATSAPP_URL, BASE_PATH } from "./config";
+import { WHATSAPP_URL } from "./config";
 
 export type Post = {
   slug: string;
@@ -17,11 +17,11 @@ export const posts: Post[] = [
     summary:
       "Conoce a Natalia Acuña, la persona detrás de Macata Go: su historia, su forma de viajar y cómo puede ayudarte.",
     date: "2026-02-18",
-    cover: `${BASE_PATH}/hero.webp`,
+    cover: "/hero.webp",
     content: () => (
       <>
         <Image
-          src={`${BASE_PATH}/hero.webp`}
+          src="/hero.webp"
           alt="Natalia Acuña"
           width={800}
           height={500}

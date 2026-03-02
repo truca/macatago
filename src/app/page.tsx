@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PERSONA, BASE_PATH } from "@/lib/config";
+import { PERSONA } from "@/lib/config";
 import {
   IconChat,
   IconCalendar,
@@ -78,7 +78,7 @@ function HeroSection() {
         <div className="relative mx-auto w-56 shrink-0 sm:w-64 md:w-72 lg:w-80">
           <div className="aspect-square overflow-hidden rounded-full border-4 border-primary/20 shadow-xl">
             <Image
-              src={`${BASE_PATH}/foto1.webp`}
+              src="/foto1.webp"
               alt={PERSONA.nombre}
               width={640}
               height={640}

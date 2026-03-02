@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { BASE_PATH } from "@/lib/config";
 import { Quicksand } from "next/font/google";
 
 const brandFont = Quicksand({
@@ -17,7 +16,7 @@ export function Header() {
         {/* Logo / Marca */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src={`${BASE_PATH}/logo_sin_texto.svg`}
+            src="/logo_sin_texto.svg"
             alt="Macata Go logo"
             width={54}
             height={54}
