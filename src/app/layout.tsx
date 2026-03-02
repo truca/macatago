@@ -3,7 +3,7 @@ import { ThemeScript } from "@/components/ThemeScript";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { SITE_URL, PERSONA } from "@/lib/config";
+import { SITE_URL, PERSONA, CONTACT_EMAIL } from "@/lib/config";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: `${PERSONA.marca} — Viajar sin stress empieza aquí`,
     description:
       "Asesoría y planificación de viajes personalizada. Cotiza gratis por WhatsApp.",
-    // TODO: agregar imagen OG → images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/hero.webp", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
@@ -38,6 +38,32 @@ export const metadata: Metadata = {
       "Asesoría y planificación de viajes personalizada. Cotiza gratis por WhatsApp.",
   },
   robots: { index: true, follow: true },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: PERSONA.marca,
+  url: SITE_URL,
+  description:
+    "Asesoría y planificación de viajes personalizada. Cotiza gratis por WhatsApp.",
+  founder: {
+    "@type": "Person",
+    name: `${PERSONA.nombreCompleto} ${PERSONA.apellido}`,
+    jobTitle: PERSONA.cargo,
+  },
+  areaServed: { "@type": "Country", name: "Chile" },
+  serviceType: [
+    "Asesoría de viajes",
+    "Planificación de itinerarios",
+    "Reservas de hotel y transporte",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    email: CONTACT_EMAIL,
+    availableLanguage: "Spanish",
+  },
 };
 
 export default function RootLayout({
@@ -49,6 +75,10 @@ export default function RootLayout({
     <html lang="es" data-theme="solar" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="min-h-screen antialiased">
