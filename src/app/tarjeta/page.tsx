@@ -2,8 +2,8 @@
 
 import { WHATSAPP_E164, CONTACT_EMAIL, SITE_URL, PERSONA } from "@/lib/config";
 import { IconCalendar, IconDownload, IconCopy, IconShare, IconUser } from "@/components/Icons";
+import { TrackedLink } from "@/components/TrackedLink";
 import { useState } from "react";
-import type { Metadata } from "next";
 
 /* ============================================
    /tarjeta — Tarjeta Digital para compartir
@@ -90,13 +90,14 @@ export default function TarjetaPage() {
             </p>
 
             {/* Main CTA */}
-            <a
+            <TrackedLink
               href="/agendar"
+              track={{ event: "cta_click", location: "tarjeta" }}
               className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-full bg-primary py-3.5 text-base font-bold text-primary-fg hover:bg-primary-hover"
             >
               <IconCalendar className="h-5 w-5" />
               Agendar una reunión
-            </a>
+            </TrackedLink>
 
             {/* Secondary actions */}
             <div className="mt-4 grid grid-cols-3 gap-3">

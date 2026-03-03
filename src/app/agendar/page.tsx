@@ -4,6 +4,12 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { CALENDLY_URL, TALLY_FORM_URL, PERSONA } from "@/lib/config";
 import { IconCalendar, IconCheck, IconPlane } from "@/components/Icons";
+import {
+  trackBookingCompleted,
+  trackFormStarted,
+  trackFormCompleted,
+  trackConversionComplete,
+} from "@/lib/analytics";
 
 type Step = "calendly" | "transition" | "tally" | "success";
 
@@ -12,6 +18,7 @@ export default function AgendarPage() {
   const calendlyRef = useRef<HTMLDivElement>(null);
 
   function goToStep(next: Step) {
+    if (next === "success") trackConversionComplete();
     setStep(next);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -38,6 +45,7 @@ export default function AgendarPage() {
 
       // Calendly widget emite esto al agendar
       if (step === "calendly" && data?.event === "calendly.event_scheduled") {
+        trackBookingCompleted();
         goToStep("transition");
       }
 
@@ -47,6 +55,7 @@ export default function AgendarPage() {
         (e.data === "Tally.FormSubmitted" ||
           data?.event === "Tally.FormSubmitted")
       ) {
+        trackFormCompleted();
         goToStep("success");
       }
     },
@@ -73,7 +82,7 @@ export default function AgendarPage() {
           />
         )}
         {step === "transition" && (
-          <TransitionStep onContinue={() => goToStep("tally")} />
+          <TransitionStep onContinue={() => { trackFormStarted(); goToStep("tally"); }} />
         )}
         {step === "tally" && (
           <TallyStep onSkip={() => goToStep("success")} />

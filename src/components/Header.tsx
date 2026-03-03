@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Quicksand } from "next/font/google";
+import { TrackedLink } from "@/components/TrackedLink";
 
 const brandFont = Quicksand({
   subsets: ["latin"],
@@ -38,8 +39,9 @@ export function Header() {
           >
             Blog
           </Link>
-          <Link
+          <TrackedLink
             href="/agendar"
+            track={{ event: "cta_click", location: "header" }}
             className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-fg hover:bg-primary-hover"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
@@ -47,7 +49,7 @@ export function Header() {
               <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
             </svg>
             Agendar consulta
-          </Link>
+          </TrackedLink>
         </div>
       </div>
     </header>

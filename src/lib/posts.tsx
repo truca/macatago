@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { WHATSAPP_URL } from "./config";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export type Post = {
   slug: string;
@@ -83,9 +84,9 @@ export const posts: Post[] = [
 
         <p>
           Puedes contactarme a través de WhatsApp:{" "}
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+          <TrackedLink href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" track={{ event: "whatsapp_click" }}>
             Escríbeme por WhatsApp
-          </a>
+          </TrackedLink>
         </p>
 
         <p>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PERSONA } from "@/lib/config";
+import { TrackedLink } from "@/components/TrackedLink";
 import {
   IconChat,
   IconCalendar,
@@ -53,13 +54,14 @@ function HeroSection() {
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row md:justify-start">
-            <Link
+            <TrackedLink
               href="/agendar"
+              track={{ event: "cta_click", location: "hero" }}
               className="inline-flex items-center gap-2.5 rounded-full bg-primary px-8 py-3.5 text-base font-bold text-primary-fg shadow-lg hover:bg-primary-hover hover:scale-[1.02] active:scale-[0.98]"
             >
               <IconCalendar className="h-5 w-5" />
               Agendar consulta gratis
-            </Link>
+            </TrackedLink>
             <a
               href="#como-funciona"
               className="inline-flex items-center gap-1.5 rounded-full border border-border px-6 py-3.5 text-base font-medium text-fg-muted hover:border-primary hover:text-fg"
@@ -195,13 +197,14 @@ function QueCotizarSection() {
               </li>
             ))}
           </ul>
-          <Link
+          <TrackedLink
             href="/agendar"
+            track={{ event: "cta_click", location: "mid" }}
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-fg hover:bg-primary-hover"
           >
             <IconCalendar className="h-4 w-4" />
             Agendar consulta gratis
-          </Link>
+          </TrackedLink>
         </div>
       </div>
     </section>
@@ -280,13 +283,14 @@ function CTAFinalSection() {
           Agenda una consulta gratuita y cuéntame sobre tu viaje. Llego a
           nuestra primera reunión con un boceto listo para ti.
         </p>
-        <Link
+        <TrackedLink
           href="/agendar"
+          track={{ event: "cta_click", location: "final" }}
           className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-fg shadow-lg hover:bg-primary-hover hover:scale-[1.02] active:scale-[0.98]"
         >
           <IconCalendar className="h-6 w-6" />
           Agendar consulta gratis
-        </Link>
+        </TrackedLink>
         <p className="mt-4 text-sm text-fg-subtle">
           Solo toma 2 minutos. Sin costo ni compromiso.
         </p>

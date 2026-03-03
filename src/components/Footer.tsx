@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTACT_EMAIL, PERSONA } from "@/lib/config";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -24,9 +25,13 @@ export function Footer() {
             <Link href="/privacidad" className="hover:text-primary">
               Privacidad
             </Link>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-primary">
+            <TrackedLink
+              href={`mailto:${CONTACT_EMAIL}`}
+              track={{ event: "contact_email_click" }}
+              className="hover:text-primary"
+            >
               Contacto
-            </a>
+            </TrackedLink>
           </div>
         </div>
 
