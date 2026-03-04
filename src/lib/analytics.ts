@@ -9,9 +9,15 @@ type AnalyticsEvent =
   | { name: "whatsapp_click" }
   | { name: "contact_email_click" };
 
+function isOptedOut(): boolean {
+  if (typeof document === "undefined") return false;
+  return document.cookie.split("; ").some((c) => c === "ga_optout=1");
+}
+
 function sendEvent(event: AnalyticsEvent) {
   const w = typeof window !== "undefined" ? window : undefined;
   if (!w || typeof w.gtag !== "function") return;
+  if (isOptedOut()) return;
 
   const { name, ...rest } = event;
   const params = "params" in rest ? rest.params : undefined;
